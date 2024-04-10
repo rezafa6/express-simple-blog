@@ -1,0 +1,64 @@
+
+  <button id='modalBtn' type="button" class="btn btn-primary mx-2 my-4" data-bs-toggle="modal" data-bs-target="#myModal">
+  ایجاد پست جدید +
+  </button>
+{{# message}} {{message}} {{/ message}}
+
+{{# error}}
+{{error}}
+{{/ error}}
+
+{{> createPostModal }}
+
+<form method='GET' action='' class='w-50  bg-light d-flex align-items-center mx-2 form-group'>
+<input placeholder='search' class='form-control w-25 ms-1' type="text" name="search" >
+<button type='submit' class='btn btn-info mx-1' > search </button>
+<a href='/articles' class='btn btn-danger mx-1' > remove search filter </a>
+</form>
+
+<div class='d-flex flex-wrap align-items-center justify-content-around my-3'>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">slug</th>
+      <th scope="col">created date</th>
+      <th scope="col">author</th>
+      <th scope="col">comments</th>
+      <th scope="col">status</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{# allPostsList }}
+    <tr>
+      <th scope="row">{{index}}</th>
+      <td> {{title}}</td>
+      <td>{{slug}}</td>
+      <td>{{created_at_persian}}</td>
+      <td>{{full_name}}</td>
+      <td>{{comments}}</td>
+      <td>{{status}}</td>
+      <td>
+       <a href='articles/delete/{{id}}' class='btn btn-danger'> delete </a> 
+       <a href='articles/edit/{{id}}' class='btn btn-info'> edit </a>
+       </td>
+      
+    </tr>
+  {{/ allPostsList }}
+
+  </tbody>
+</table>
+</div>
+<div class='pagination shadow bg-light d-flex align-items-center justify-content-center m-5 p-5'>
+    <span class='mx-3'>totalPages
+    {{pagesOptions.totalPages}}
+    </span>
+    <span class='mx-3'>currentPages
+    {{pagesOptions.currentPage}}
+    </span>
+    <a class='text-white mx-3 bg-dark btn' href='articles?page={{pagesOptions.nextPage}}'> next </a>
+    <a class='text-white mx-3 bg-dark btn' href='articles?page={{pagesOptions.prevPage}}'> prev </a>
+</div>
+</div>

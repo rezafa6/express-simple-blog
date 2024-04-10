@@ -1,0 +1,34 @@
+
+  <!-- The Modal -->
+<div class="modal-dialog">
+  <div class="modal-content">
+    <!-- Header -->
+    <div class="modal-header justify-content-center">
+      <h4 class="modal-title">Edit Article</h4>
+    </div>
+
+    <!-- body -->
+    <div class="modal-body">
+      <form action="submit/{{selectedPost.id}}" method='post' class='form-group'>
+        <input class='form-control my-2' value="{{selectedPost.title}}" name='title' placeholder='title'>
+        <input class='form-control my-2' value="{{selectedPost.slug}}" name='slug' placeholder='slug'>
+        <input class='form-control my-2' value="{{selectedPost.content}}" name='content' placeholder='content'>
+        <select class='form-control my-2' value="{{selectedPost.status}}"  name="status">
+          <option value="1"> publish </option>
+          <option value="2"> draft </option>
+        </select>
+        <select class='form-control my-2' name="author_id">
+        {{# usersList}}
+        <option value="{{id}}"> {{full_name}} </option>
+        {{/ usersList}}
+        </select>
+        <button class='btn btn-success' type='submit'> Save changes </button>
+      </form>
+
+    </div>
+    <!-- footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>

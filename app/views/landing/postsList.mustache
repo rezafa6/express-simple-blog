@@ -1,0 +1,14 @@
+<div class='mt-5 px-5 pt-5' style='min-height: 45vh' >
+<div class='mt-5 p-5'>{{> postsListComponent}}</div>
+
+<div class='pagination bg-light d-flex align-items-center justify-content-center m-5 p-5'>
+    <span class='mx-3'>totalPages
+    {{pagesOptions.totalPages}}
+    </span>
+    <span class='mx-3'>currentPages
+    {{pagesOptions.currentPage}}
+    </span>
+    <a class='text-white mx-3 bg-dark btn' href='posts-list?page={{pagesOptions.nextPage}}'> next </a>
+    <a class='text-white mx-3 bg-dark btn' href='posts-list?page={{pagesOptions.prevPage}}'> prev </a>
+</div>
+</div>

@@ -1,0 +1,17 @@
+<div class='border container bg-light p-3 m-4'>
+
+    <div class='px-3'>
+        <span class='text-danger fw-bolder' > {{# message}} {{message}} {{/ message}}</span>
+    </div>
+
+    <form action="create-user" method="post" class="form-group p-3">
+        <input class="form-control my-3" type="text" name="full_name" placeholder="full_name">
+        <input class="form-control my-3" type="password" name="password" placeholder="password">
+        <input class="form-control my-3" type="text" name="email" placeholder="email">
+        <select class='form-control my-3' name="role">
+            <option value="1">Admin</option>
+            <option value="2">User</option>
+        </select>
+        <button class='btn btn-info' type="submit">Save User</button>
+    </form>
+</div>

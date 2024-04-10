@@ -1,0 +1,33 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">email</th>
+      <th scope="col">created date</th>
+      <th scope="col">comment</th>
+      <th scope="col">postTitle</th>
+      <th scope="col">status</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{# commentsList }}
+    <tr>
+      <td> {{email}}</td>
+      <td>{{created_at_persian}}</td>
+      <td>{{comment}}</td>
+      <td>{{postTitle}}</td>
+ 
+      <td>
+     {{statusTitle}}
+      </td>
+
+      <td>
+      <a href='comments/handle/{{id}}/{{commentsStatus.ACCEPT}}' class='btn btn-success' > Accept </a>
+      <a href='comments/handle/{{id}}/{{commentsStatus.REJECT}}' class='btn btn-danger'> Reject </a>
+      </td>
+      
+    </tr>
+  {{/ commentsList }}
+
+  </tbody>
+</table>

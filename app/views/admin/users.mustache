@@ -1,0 +1,35 @@
+
+  <a href='users/create-user' class="btn btn-primary my-4">
+  ایجاد کاربر جدید +
+  </a>
+        {{# message}} {{message}} {{/ message}}
+<div class='d-flex flex-wrap align-items-center justify-content-around my-3'>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">full_name</th>
+      <th scope="col">email</th>
+      <th scope="col">password</th>
+      <th scope="col">role</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{# allUsersList }}
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td> {{full_name}}</td>
+      <td>{{email}}</td>
+      <td>{{password}}</td>
+      <td>{{role}}</td>
+      <td>
+       <a href='users/delete/{{id}}' class='btn btn-danger'> delete </a> 
+       <a href='users/edit/{{id}}' class='btn btn-info'> edit </a>
+       </td>
+    </tr>
+  {{/ allUsersList }}
+
+  </tbody>
+</table>
+</div>

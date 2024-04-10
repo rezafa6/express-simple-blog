@@ -1,0 +1,41 @@
+{
+  "name": "simple-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
+    "express-fileupload": "^1.5.0",
+    "express-handlebars": "^7.1.2",
+    "express-mysql-session": "^3.0.0",
+    "express-session": "^1.18.0",
+    "jalali-moment": "^3.3.11",
+    "lodash": "^4.17.21",
+    "module-alias": "^2.2.3",
+    "mustache-express": "^1.3.2",
+    "mysql2": "^3.9.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@env": "./",
+    "@models": "app/models",
+    "@controllers": "app/controllers",
+    "@routes": "app/routes",
+    "@services": "app/services",
+    "@middleware": "app/middleware",
+    "@database": "database"
+  }
+}

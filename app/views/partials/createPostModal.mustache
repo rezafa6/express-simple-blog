@@ -1,0 +1,43 @@
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <h4 class="modal-title">Modal Heading</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="/articles" method='post' class='form-group' enctype="multipart/form-data" >
+        <input class='form-control my-2' name='title' placeholder='title'>
+        <input class='form-control my-2' name='slug' placeholder='slug'>
+        <input class='form-control my-2' name='content' placeholder='content'>
+        <select class='form-control my-2' name="status">
+        <option value="1"> publish </option>
+        <option value="2"> draft </option>
+        </select>
+
+        <select class='form-control my-2' name="author_id">
+        {{# usersList}}
+        <option value="{{id}}"> {{full_name}} </option>
+        {{/ usersList}}
+        </select>
+
+       <input class='form-control my-2' type='file' name='postImg' placeholder='postImg'>
+
+        <button class='btn btn-success' type='submit' > + Add post </button>
+         </form>
+        
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
